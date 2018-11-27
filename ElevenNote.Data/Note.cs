@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
@@ -8,6 +9,8 @@ using System.Threading.Tasks;
 
 namespace ElevenNote.Data
 {
+    public enum SubjectType {Math,English,Science}
+
     public class Note
     {
         [Key]
@@ -21,6 +24,9 @@ namespace ElevenNote.Data
 
         [Required]
         public string Content { get; set; }
+
+        [Required]
+        public SubjectType ClassSubject { get; set; }
 
         [DefaultValue(false)]
         public bool IsStarred { get; set; }
